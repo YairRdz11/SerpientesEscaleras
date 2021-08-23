@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CanvasService } from 'src/app/canvas.service';
 
 @Component({
   selector: 'app-init',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private canvasService: CanvasService) { }
 
   ngOnInit(): void {
+  }
+
+  onPlay(){
+    this.canvasService.initPlayer();
+    this.router.navigate(['game']);
   }
 
 }
