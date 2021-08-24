@@ -8,13 +8,17 @@ import { InitComponent } from './views/init/init.component';
 import { BoardComponent } from './views/board/board.component';
 import { GameComponent } from './views/game/game.component';
 import { CanvasService } from './canvas.service';
+import { ScoreComponent } from './views/score/score.component';
+import { PlayerComponent } from './views/player/player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitComponent,
     BoardComponent,
-    GameComponent
+    GameComponent,
+    ScoreComponent,
+    PlayerComponent
   ],
   imports: [
     AppRoutingModule,
