@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class GameComponent implements OnInit {
-
+  steps: number = 0;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getSteps(steps: number){
+    this.steps = steps;
   }
 
 }

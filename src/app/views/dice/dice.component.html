@@ -1,0 +1,14 @@
+<div class="card mt-4">
+    <button *ngIf="!isPlaying" type="button" class="btn btn-primary" (click)="onPlay()">Iniciar</button>
+    <button *ngIf="isPlaying" type="button" class="btn btn-primary" (click)="onThrow()">Girar</button>
+    <button  *ngIf="isPlaying" type="button" class="btn btn-info mt-4" (click)="onRestart()">Reiniciar</button>
+    <div class="mt-4 d-flex justify-content-center">
+        <img *ngIf="diceNumber == 0" src="../../../assets/images/dice-default.png" alt="dado" height="74" width="74">
+        <img *ngIf="diceNumber == 1" src="../../../assets/images/dice-one.png" alt="dado" height="74" width="74">
+    <img *ngIf="diceNumber == 2" src="../../../assets/images/dice-two.png" alt="dado" height="74" width="74">
+    <img *ngIf="diceNumber == 3" src="../../../assets/images/dice-three.png" alt="dado" height="74" width="74">
+    <img *ngIf="diceNumber == 4" src="../../../assets/images/dice-four.png" alt="dado" height="74" width="74">
+    <img *ngIf="diceNumber == 5" src="../../../assets/images/dice-five.png" alt="dado" height="74" width="74">
+    <img *ngIf="diceNumber == 6" src="../../../assets/images/dice-six.png" alt="dado" height="74" width="74">
+    </div>
+</div>
