@@ -57,11 +57,7 @@ export class DiceComponent implements OnInit {
 
   refreshPlayers(){
     for (const player of this._canvasService.players) {
-      //if(!player.turn)
-      {
-        this.movePlayer(player);
-        console.log(player);
-      }
+      this.movePlayer(player);
     }
   }
 
@@ -74,7 +70,6 @@ export class DiceComponent implements OnInit {
     let currentPlayer = this._canvasService.players[this.turn];
     currentPlayer.current = currentPlayer.current + this.diceNumber;
 
-    //this.movePlayer(currentPlayer);
     this._canvasService.setTurnOffPlayers();
     this.turn++;
 
@@ -89,6 +84,13 @@ export class DiceComponent implements OnInit {
   onRestart(){
     this.diceNumber = 0;
     this.isPlaying = false;
+    this.turn = 0;
+    this.round = 0;
+    for (const player of this._canvasService.players) {
+      player.reset();
+    }
+    this._canvasService.players[this.turn].turnOn();
+    this.refreshBoard();
   }
 
   getRandomInt() : number{

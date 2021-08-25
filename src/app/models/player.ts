@@ -25,4 +25,9 @@ export class Player {
   setCurrent(current: number) {
     this.current = current;
   }
+
+  reset(){
+    this.current = 0;
+    this.turn = false;
+  }
 }
