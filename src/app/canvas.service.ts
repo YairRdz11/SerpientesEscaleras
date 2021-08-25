@@ -28,4 +28,10 @@ export class CanvasService {
   getCanvasRendering(): CanvasRenderingContext2D {
     return this.canvasRenderingContext;
   }
+
+  setTurnOffPlayers(){
+    for (const player of this.players) {
+      player.turnOff();
+    }
+  }
 }
