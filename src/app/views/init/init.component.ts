@@ -10,13 +10,12 @@ import { CanvasService } from 'src/app/canvas.service';
 })
 export class InitComponent implements OnInit {
 
-  constructor(private router:Router, private canvasService: CanvasService) { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
   onPlay(){
-    this.canvasService.initPlayer();
     this.router.navigate(['game']);
   }
 

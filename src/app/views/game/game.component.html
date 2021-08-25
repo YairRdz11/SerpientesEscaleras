@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col-8">
             <app-board></app-board>
-            <h1>{{steps}}</h1>   
+            <h1>{{steps}}</h1>
         </div>
         <div class="col-4">
-            <app-score></app-score>
+            <app-score *ngIf="players.length > 0" [players]="players"></app-score>
             <app-dice (diceEmitter)="getSteps($event)"></app-dice>
         </div>
     </div>

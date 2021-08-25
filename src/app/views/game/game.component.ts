@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CanvasService } from 'src/app/canvas.service';
+import { Player } from 'src/app/models/player';
 
 @Component({
   selector: 'app-game',
@@ -8,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
   steps: number = 0;
-  constructor() { }
+  players :Player[] = [];
+
+
+  constructor(private _canvasService: CanvasService) {
+  }
 
   ngOnInit(): void {
+    this._canvasService.initPlayer();
+    this.players = this._canvasService.players;
   }
 
   getSteps(steps: number){

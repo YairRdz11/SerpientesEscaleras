@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CanvasService } from 'src/app/canvas.service';
-import { Tile } from '../../models/Tile';
+import { Tile } from '../../models/tile';
 
 @Component({
   selector: 'app-board',
@@ -19,7 +19,7 @@ export class BoardComponent implements OnInit {
   constructor(private canvasService: CanvasService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   ngAfterViewInit(): void{
@@ -37,7 +37,7 @@ export class BoardComponent implements OnInit {
     let cols = this.width/this.resolution;
     let rows = this.height/this.resolution;
     let dir = 1;
-    
+
     let x = 0;
     let y = (rows - 1) * this.resolution;
 

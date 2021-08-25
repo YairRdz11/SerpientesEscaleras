@@ -3,8 +3,8 @@
         <img src="../../../assets/images/user.png" alt="player">
     </div>
     <div class="col-3 d-flex align-items-center">
-        <p>
-            {{name}}
+        <p *ngIf="player">
+            {{player.name}}
         </p>
     </div>
     <div class="col-1 d-flex align-items-center">{{points}}</div>
