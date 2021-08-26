@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Ladder } from './models/ladder';
 import { Player, } from './models/player';
+import { Snake } from './models/snake';
 import { Tile } from './models/tile';
 
 @Injectable({
@@ -10,7 +12,9 @@ export class CanvasService {
   player2!: Player;
   players: Player[] = [];
   canvasRenderingContext!: CanvasRenderingContext2D;
-  tiles :Tile[] = [];
+  tiles: Tile[] = [];
+  snakes: Snake[] = [];
+  ladders: Ladder[] = [];
 
   constructor() { }
 

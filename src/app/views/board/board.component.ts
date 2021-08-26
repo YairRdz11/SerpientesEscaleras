@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CanvasService } from 'src/app/canvas.service';
+import { Ladder } from 'src/app/models/ladder';
+import { Snake } from 'src/app/models/snake';
 import { Tile } from '../../models/tile';
 
 @Component({
@@ -31,6 +33,33 @@ export class BoardComponent implements OnInit {
     for(let tile of this.canvasService.tiles){
       tile.draw(this.canvasRenderingContext);
     }
+
+    this.setupSnake();
+    for (let snake of this.canvasService.snakes) {
+      snake.draw(this.canvasService.getCanvasRendering());
+    }
+
+    this.setupLadder();
+    for (let ladder of this.canvasService.ladders) {
+      ladder.draw(this.canvasService.getCanvasRendering());
+    }
+  }
+
+  setupSnake(){
+    let snake1 = new Snake(0, 140, "snake-small.png");
+    let snake2 = new Snake(420,70, "snake-small.png");
+    let snake3 = new Snake(280,420, "snake-small1.png");
+    this.canvasService.snakes.push(snake1);
+    this.canvasService.snakes.push(snake2);
+    this.canvasService.snakes.push(snake3);
+  }
+
+  setupLadder(){
+    let ladder1 = new Ladder(280, 100);
+    this.canvasService.ladders.push(ladder1);
+
+    let ladder2 = new Ladder(70, 450);
+    this.canvasService.ladders.push(ladder2);
   }
 
   setupBoard() {
