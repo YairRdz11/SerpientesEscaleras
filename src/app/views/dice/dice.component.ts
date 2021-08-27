@@ -50,6 +50,7 @@ export class DiceComponent implements OnInit {
   }
 
   refreshBoard(){
+    this._canvasService.getCanvasRendering().clearRect(0, 0, 700, 700);
     for(let tile of this._canvasService.tiles){
       tile.draw(this._canvasService.getCanvasRendering());
     }
@@ -70,15 +71,23 @@ export class DiceComponent implements OnInit {
     let currentPlayer = this._canvasService.players[this.turn];
     currentPlayer.current = currentPlayer.current + this.diceNumber;
 
-    this._canvasService.setTurnOffPlayers();
-    this.turn++;
+    if(currentPlayer.current < 99){
+      this._canvasService.setTurnOffPlayers();
+      this.turn++;
 
-    if(this.turn > this._canvasService.players.length - 1){
-      this.turn = 0;
-      this.round++;
-    }
+      if(this.turn > this._canvasService.players.length - 1){
+        this.turn = 0;
+        this.round++;
+     }
     this._canvasService.players[this.turn].turnOn();
     this.refreshPlayers();
+    }
+    else{
+      alert(currentPlayer.name + " ha ganado");
+      this.onRestart();
+    }
+
+    console.log(currentPlayer);
   }
 
   onRestart(){
