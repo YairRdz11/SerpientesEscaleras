@@ -22,8 +22,9 @@ export class Player {
     this.turn = false;
   }
 
-  setCurrent(current: number) {
+  setCurrent(current: number, currentTile: Tile) {
     this.current = current;
+    this.currentTile = currentTile;
   }
 
   reset(){

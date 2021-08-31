@@ -27,9 +27,8 @@ export class DiceComponent implements OnInit {
     this.turn = 0;
 
     for (let index = 0; index < this._canvasService.players.length; index++) {
-      this._canvasService.players[index].setCurrent(0);
+      this._canvasService.players[index].setCurrent(0, this._canvasService.tiles[0]);
       this._canvasService.players[index].turnOff();
-      this._canvasService.players[index].currentTile = this._canvasService.tiles[0];
       this.movePlayer(this._canvasService.players[index]);
     }
 
@@ -51,8 +50,17 @@ export class DiceComponent implements OnInit {
 
   refreshBoard(){
     this._canvasService.getCanvasRendering().clearRect(0, 0, 700, 700);
+
     for(let tile of this._canvasService.tiles){
       tile.draw(this._canvasService.getCanvasRendering());
+    }
+
+    for(let snake of this._canvasService.snakes){
+      snake.draw(this._canvasService.getCanvasRendering());
+    }
+
+    for(let ladder of this._canvasService.ladders){
+      ladder.draw(this._canvasService.getCanvasRendering());
     }
   }
 
@@ -69,25 +77,35 @@ export class DiceComponent implements OnInit {
     this.refreshBoard();
 
     let currentPlayer = this._canvasService.players[this.turn];
-    currentPlayer.current = currentPlayer.current + this.diceNumber;
+
+    let currentTile = currentPlayer.current + this.diceNumber;
+    currentPlayer.setCurrent(currentTile, this._canvasService.tiles[currentTile]);
 
     if(currentPlayer.current < 99){
       this._canvasService.setTurnOffPlayers();
       this.turn++;
 
+      this.refreshPlayers();
+      console.log(currentPlayer);
+      if(currentPlayer.currentTile.snake){
+        currentPlayer.setCurrent(currentPlayer.currentTile.snake.tileFinish.index, currentPlayer.currentTile.snake.tileFinish);
+      }
+      if(currentPlayer.currentTile.ladder){
+        currentPlayer.setCurrent(currentPlayer.currentTile.ladder.tileFinish.index, currentPlayer.currentTile.ladder.tileFinish);
+      }
+      this.refreshBoard();
+      this.refreshPlayers();
+      console.log(currentPlayer);
       if(this.turn > this._canvasService.players.length - 1){
         this.turn = 0;
         this.round++;
-     }
-    this._canvasService.players[this.turn].turnOn();
-    this.refreshPlayers();
+      }
+      this._canvasService.players[this.turn].turnOn();
     }
     else{
       alert(currentPlayer.name + " ha ganado");
       this.onRestart();
     }
-
-    console.log(currentPlayer);
   }
 
   onRestart(){

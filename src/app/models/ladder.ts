@@ -1,13 +1,10 @@
-export class Ladder {
-  x: number = 0;
-  y: number = 0;
-  degree: number = 0;
-  scale: number = 1;
-  imgSrc: string = "../../assets/images/ladder.png";
+import { ComplementBase } from "./complementBase";
+import { Tile } from "./tile";
 
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
+export class Ladder extends ComplementBase {
+
+  constructor(x: number, y: number, tileStart: Tile, tileFinish: Tile, imgName: string) {
+    super(x, y, tileStart, tileFinish, imgName);
   }
 
   draw(ctx: CanvasRenderingContext2D){
