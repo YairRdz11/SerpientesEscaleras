@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CanvasService } from 'src/app/canvas.service';
 import { Player } from 'src/app/models/player';
+import { TestServiceService } from 'src/app/services/test-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dice',
@@ -16,7 +18,7 @@ export class DiceComponent implements OnInit {
   turn: number = 0;
 
   @Output() diceEmitter = new EventEmitter<number>();
-  constructor(private _canvasService: CanvasService) { }
+  constructor(private _canvasService: CanvasService, private _questionService: TestServiceService) { }
 
   ngOnInit(): void {
   }
@@ -70,23 +72,62 @@ export class DiceComponent implements OnInit {
     }
   }
 
-  onThrow(){
-    this.diceNumber = this.getRandomInt();
+  async onThrow(){
+    this.diceNumber = this.getRandomInt(this.min, this.max);
     this.diceEmitter.emit(this.diceNumber);
-
-    this.refreshBoard();
-
-    let currentPlayer = this._canvasService.players[this.turn];
-
+    var currentPlayer = this._canvasService.players[this.turn];
     let currentTile = currentPlayer.current + this.diceNumber;
-    currentPlayer.setCurrent(currentTile, this._canvasService.tiles[currentTile]);
 
+    this._questionService.getList().subscribe(data => {
+      let random = this.getRandomInt(0, data.length -1);
+      var question = data[random];
+      let answers = question.answerList.map(x=> x.answer);
+      var correctAnswer = question.answerList.findIndex(x=> x.isCorrect);
+      const value = Swal.fire({
+        title: question.question,
+        input: 'radio',
+        inputOptions: answers,
+      }).then((result) => {
+
+        this._canvasService.setTurnOffPlayers();
+        this.turn++;
+        if(this.turn > this._canvasService.players.length - 1){
+          this.turn = 0;
+          this.round++;
+        }
+        this._canvasService.players[this.turn].turnOn();
+
+        if(correctAnswer == result.value){
+          if(currentPlayer.current < 99){
+            this.refreshBoard();
+            currentPlayer.setCurrent(currentTile, this._canvasService.tiles[currentTile]);
+            this.refreshPlayers();
+            Swal.fire({
+              icon: 'success',
+              title: 'Correcto!',
+              text: 'Sigue asi!'
+            })
+          }
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Ops!',
+            text: 'Te haz equivocado!'
+          });
+        }
+      });
+
+    });
+  }
+
+  movePlayerWhenIsCorrect(currentPlayer: Player){
     if(currentPlayer.current < 99){
       this._canvasService.setTurnOffPlayers();
       this.turn++;
 
       this.refreshPlayers();
-      console.log(currentPlayer);
+
       if(currentPlayer.currentTile.snake){
         currentPlayer.setCurrent(currentPlayer.currentTile.snake.tileFinish.index, currentPlayer.currentTile.snake.tileFinish);
       }
@@ -95,7 +136,6 @@ export class DiceComponent implements OnInit {
       }
       this.refreshBoard();
       this.refreshPlayers();
-      console.log(currentPlayer);
       if(this.turn > this._canvasService.players.length - 1){
         this.turn = 0;
         this.round++;
@@ -120,9 +160,9 @@ export class DiceComponent implements OnInit {
     this.refreshBoard();
   }
 
-  getRandomInt() : number{
-    this.min = Math.ceil(this.min);
-    this.max = Math.floor(this.max);
-    return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
+  getRandomInt(min: number, max: number) : number{
+    let _min = Math.ceil(min);
+    let _max = Math.floor(max);
+    return Math.floor(Math.random() * (_max - _min + 1)) + _min;
   }
 }
