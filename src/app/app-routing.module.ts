@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { GameComponent } from "./views/game/game.component";
 import { InitComponent } from "./views/init/init.component";
+import { ManageTestComponent } from "./views/manage-test/manage-test.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'game',
     component: GameComponent
+  },
+  {
+    path: 'manage-test',
+    component: ManageTestComponent
   }
 ]
 

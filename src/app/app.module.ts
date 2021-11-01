@@ -12,6 +12,8 @@ import { CanvasService } from './canvas.service';
 import { ScoreComponent } from './views/score/score.component';
 import { PlayerComponent } from './views/player/player.component';
 import { DiceComponent } from './views/dice/dice.component';
+import { ManageTestComponent } from './views/manage-test/manage-test.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { DiceComponent } from './views/dice/dice.component';
     GameComponent,
     ScoreComponent,
     PlayerComponent,
-    DiceComponent
+    DiceComponent,
+    ManageTestComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [CanvasService],
   bootstrap: [AppComponent]
