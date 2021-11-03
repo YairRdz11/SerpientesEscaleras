@@ -18,5 +18,7 @@ export class InitComponent implements OnInit {
   onPlay(){
     this.router.navigate(['game']);
   }
-
+  onHome(){
+    this.router.navigate(['home']);
+  }
 }

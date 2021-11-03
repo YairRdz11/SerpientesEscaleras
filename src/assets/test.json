@@ -40,5 +40,26 @@
         "isCorrect": false
       }
     ]
+  },
+  {
+    "question": "Pregunta 3",
+    "answerList": [
+      {
+        "answer": "Respuesta 1",
+        "isCorrect": false
+      },
+      {
+        "answer": "Respuesta 2",
+        "isCorrect": true
+      },
+      {
+        "answer": "Respuesta 3",
+        "isCorrect": false
+      },
+      {
+        "answer": "Respuesta 4",
+        "isCorrect": false
+      }
+    ]
   }
 ]

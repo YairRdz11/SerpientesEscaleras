@@ -1,8 +1,24 @@
-<div class="card">
+<div class="container">
+
+
+  <div class="card align-items-center">
     <div class="card-body">
-        <h1 class="card-title">
-            Bienvenidos a Serpientes y escaleras
-        </h1>
-        <button type="button" class="btn btn-dark" (click)="onPlay()" >Jugar</button>
+      <h2 class="card-title text-center">Serpientes y Escaleras</h2>
+      <div class="row">
+        <img src="../../../assets/images/S-E.png" alt="" />
+      </div>
+      <div class="row text-center">
+        <button
+          type="button"
+          class="btn btn-dark"
+          style="
+            font-size: 60px;
+            text-shadow: black 5px 3px 3px;
+            background-color: #008080;"
+          (click)="onPlay()">
+          Iniciar
+        </button>
+      </div>
     </div>
+  </div>
 </div>
