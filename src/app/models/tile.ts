@@ -28,7 +28,7 @@ export class Tile {
     draw(canvasRenderingContext: CanvasRenderingContext2D) {
         canvasRenderingContext.fillStyle = this.color;
         canvasRenderingContext.fillRect(this.x, this.y, this.resolution, this.resolution);
-        canvasRenderingContext.fillStyle='#111111';
+        canvasRenderingContext.fillStyle='#000000';
         canvasRenderingContext.font="bold 13px Arial";
         canvasRenderingContext.fillText((this.index+1).toString(),(this.x),(this.y+20));
     }

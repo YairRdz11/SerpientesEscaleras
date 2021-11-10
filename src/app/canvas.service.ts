@@ -18,11 +18,12 @@ export class CanvasService {
 
   constructor() { }
 
-  initPlayer(){
-    this.player1 = new Player("Player 1","#B71C1C");
-    this.player2 = new Player("Player 2" , '#4A148C');
-    this.players.push(this.player1);
-    this.players.push(this.player2);
+  initPlayer(playerList: Player[]){
+   for (let player of playerList) {
+     player.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+   }
+    this.players = playerList;
+    console.log(this.players);
   }
 
   setCanvas(canvasRenderingContext: CanvasRenderingContext2D) {

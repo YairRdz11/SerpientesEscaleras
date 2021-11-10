@@ -47,6 +47,7 @@ export class DiceComponent implements OnInit {
     canvasRendering.arc(x, y, 13, 0, 2 * Math.PI);
     canvasRendering.fillStyle = player.color;
     canvasRendering.fill();
+    canvasRendering.fillStyle = '#000000';
     canvasRendering.fillText(player.name,x, y);
   }
 

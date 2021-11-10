@@ -8,10 +8,12 @@ export class Player {
   turn!: boolean;
   currentTile!: Tile;
 
-  constructor(name: string, color: string) {
-    this.name = name;
-    this.color = color;
+  constructor() {
     this.turn = false;
+  }
+
+  setName(namePlayer: string){
+    this.name = namePlayer;
   }
 
   turnOn() {

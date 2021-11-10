@@ -13,6 +13,7 @@ import { ScoreComponent } from './views/score/score.component';
 import { PlayerComponent } from './views/player/player.component';
 import { DiceComponent } from './views/dice/dice.component';
 import { CustomUserComponent } from './views/custom-user/custom-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CustomUserComponent } from './views/custom-user/custom-user.component';
     AppRoutingModule,
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CanvasService],
   bootstrap: [AppComponent]
