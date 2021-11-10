@@ -12,7 +12,7 @@ import { CanvasService } from './canvas.service';
 import { ScoreComponent } from './views/score/score.component';
 import { PlayerComponent } from './views/player/player.component';
 import { DiceComponent } from './views/dice/dice.component';
-import { HomeComponent } from './home/home.component';
+import { CustomUserComponent } from './views/custom-user/custom-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { HomeComponent } from './home/home.component';
     ScoreComponent,
     PlayerComponent,
     DiceComponent,
-    HomeComponent
+    CustomUserComponent
   ],
   imports: [
     AppRoutingModule,
