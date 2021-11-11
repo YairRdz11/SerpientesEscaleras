@@ -20,10 +20,14 @@ export class CanvasService {
 
   initPlayer(playerList: Player[]){
    for (let player of playerList) {
-     player.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+     player.color = this.getRandomColor();
    }
     this.players = playerList;
     console.log(this.players);
+  }
+
+  getRandomColor() : string{
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
   }
 
   setCanvas(canvasRenderingContext: CanvasRenderingContext2D) {

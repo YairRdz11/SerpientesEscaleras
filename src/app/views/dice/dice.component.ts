@@ -102,6 +102,12 @@ export class DiceComponent implements OnInit {
           if(currentPlayer.current < 99){
             this.refreshBoard();
             currentPlayer.setCurrent(currentTile, this._canvasService.tiles[currentTile]);
+            if(currentPlayer.currentTile.snake){
+              currentPlayer.setCurrent(currentPlayer.currentTile.snake.tileFinish.index, currentPlayer.currentTile.snake.tileFinish);
+            }
+            if(currentPlayer.currentTile.ladder){
+              currentPlayer.setCurrent(currentPlayer.currentTile.ladder.tileFinish.index, currentPlayer.currentTile.ladder.tileFinish);
+            }
             this.refreshPlayers();
             Swal.fire({
               icon: 'success',
