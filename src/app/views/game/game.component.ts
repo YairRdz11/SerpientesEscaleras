@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CanvasService } from 'src/app/canvas.service';
 import { Player } from 'src/app/models/player';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-game',
@@ -28,6 +29,10 @@ export class GameComponent implements OnInit {
 
   goBack(){
     this.router.navigate(['custom-user']);
+  }
+
+  goHome(){
+    this.router.navigate(['']);
   }
 
 }

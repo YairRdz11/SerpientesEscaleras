@@ -74,7 +74,7 @@ export class DiceComponent implements OnInit {
   }
 
   async onThrow(){
-    this.diceNumber = this.getRandomInt(this.min, this.max);
+    this.diceNumber = this.getRandomInt(this.min, this.max); // cambiar si quieres variar la velocidad
     this.diceEmitter.emit(this.diceNumber);
     var currentPlayer = this._canvasService.players[this.turn];
     let currentTile = currentPlayer.current + this.diceNumber;
@@ -99,9 +99,10 @@ export class DiceComponent implements OnInit {
         this._canvasService.players[this.turn].turnOn();
 
         if(correctAnswer == result.value){
-          if(currentPlayer.current < 99){
-            this.refreshBoard();
+          this.refreshBoard();
             currentPlayer.setCurrent(currentTile, this._canvasService.tiles[currentTile]);
+          if(currentPlayer.current < 99){
+
             if(currentPlayer.currentTile.snake){
               currentPlayer.setCurrent(currentPlayer.currentTile.snake.tileFinish.index, currentPlayer.currentTile.snake.tileFinish);
             }
@@ -113,6 +114,20 @@ export class DiceComponent implements OnInit {
               icon: 'success',
               title: 'Correcto!',
               text: 'Sigue asi!'
+            })
+          }
+          else{
+            Swal.fire({
+            title: 'Felicidades '+ currentPlayer.name+ ', has ganado',
+            width: 600,
+            padding: '3em',
+            background: '#fff url(../../assets/images/trees.png)',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("../../assets/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
             })
           }
         }

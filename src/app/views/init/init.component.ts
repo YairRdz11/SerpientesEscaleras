@@ -23,3 +23,4 @@ export class InitComponent implements OnInit {
     this.router.navigate(['custom-user'])
   }
 }
+

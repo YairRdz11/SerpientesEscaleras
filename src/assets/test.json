@@ -4,7 +4,7 @@
     "answerList": [
       {
         "answer": "Respuesta 1",
-        "isCorrect": false
+        "isCorrect": true
       },
       {
         "answer": "Respuesta 2",
@@ -12,7 +12,7 @@
       },
       {
         "answer": "Respuesta 3",
-        "isCorrect": true
+        "isCorrect": false
       },
       {
         "answer": "Respuesta 4",
@@ -46,11 +46,11 @@
     "answerList": [
       {
         "answer": "Respuesta 1",
-        "isCorrect": false
+        "isCorrect": true
       },
       {
         "answer": "Respuesta 2",
-        "isCorrect": true
+        "isCorrect": false
       },
       {
         "answer": "Respuesta 3",
