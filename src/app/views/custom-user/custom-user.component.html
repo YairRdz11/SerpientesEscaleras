@@ -4,6 +4,17 @@
       <button class="btn btn-dark" (click)="goBack()"><i class="fas fa-arrow-left"> Regresar</i></button>
       <form>
         <div class="form-group">
+          <label for="sizeSelect">Selecciona el tamaño del tablero</label>
+          <select class="form-control"
+                  id="sizeSelect"
+                  name="sizeSelect"
+                  [(ngModel)]="sizeBoard">
+            <option value="10">10x10</option>
+            <option value="7">7x7</option>
+            <option value="5">5x5</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="playerSelect">Selecciona el número de jugadores</label>
           <select class="form-control"
                   id="playerSelect"
@@ -17,15 +28,15 @@
             <option value="5">5</option>
             <option value="6">6</option>
           </select>
-          <div *ngFor="let player of playerList; let i = index" [attr.data-index]="i" class="form-group">
-            <label for="{{'player' + i}}">{{'Ingrese el nombre del jugador ' + (i + 1)}}</label>
-            <input type="text"
-                  class="form-control"
-                  id="{{'player' + i}}"
-                  placeholder="Ingrese el nombre del jugador"
-                  name="{{'player' + i}}"
-                  [(ngModel)]="player.name">
-          </div>
+        </div>
+        <div *ngFor="let player of playerList; let i = index" [attr.data-index]="i" class="form-group">
+          <label for="{{'player' + i}}">{{'Ingrese el nombre del jugador ' + (i + 1)}}</label>
+          <input type="text"
+                class="form-control"
+                id="{{'player' + i}}"
+                placeholder="Ingrese el nombre del jugador"
+                name="{{'player' + i}}"
+                [(ngModel)]="player.name">
         </div>
         <div class="float-right">
           <button

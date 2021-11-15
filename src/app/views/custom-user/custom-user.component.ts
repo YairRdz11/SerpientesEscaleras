@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class CustomUserComponent implements OnInit {
   playerList: Player[] = [];
   playerCount: number = 0;
+  sizeBoard: number = 0;
 
   constructor(private router:Router, private _canvasService: CanvasService) { }
 
@@ -31,15 +32,17 @@ export class CustomUserComponent implements OnInit {
     console.log(this.playerList);
   }
   goGame(){
-    if(this.playerList.length > 0 && this.playerList.every(x=> x.name.trim().length > 0)){
+    if(this.playerList.length > 0 && this.playerList.every(x=> x.name.trim().length > 0)
+      && this.sizeBoard > 0){
       this._canvasService.initPlayer(this.playerList);
+      this._canvasService.setSizeBoard(this.sizeBoard);
       this.router.navigate(['game']);
     }
     else{
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Completa los nombres de los jugadores'
+        text: 'Completa los datos necesarios'
       });
     }
   }

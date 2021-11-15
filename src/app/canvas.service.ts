@@ -8,13 +8,12 @@ import { Tile } from './models/tile';
   providedIn: 'root'
 })
 export class CanvasService {
-  player1!: Player;
-  player2!: Player;
   players: Player[] = [];
   canvasRenderingContext!: CanvasRenderingContext2D;
   tiles: Tile[] = [];
   snakes: Snake[] = [];
   ladders: Ladder[] = [];
+  sizeBoard: number = 10;
 
   constructor() { }
 
@@ -23,7 +22,11 @@ export class CanvasService {
      player.color = this.getRandomColor();
    }
     this.players = playerList;
-    console.log(this.players);
+  }
+
+  setSizeBoard(size: number){
+    this.sizeBoard = +size;
+    this.tiles = [];
   }
 
   getRandomColor() : string{
