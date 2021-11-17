@@ -74,6 +74,11 @@ export class BoardComponent implements OnInit {
         this.canvasService.snakes.push(this.snake2);
         this.canvasService.tiles[45].setSnake(this.snake2);
         break;
+        case 5:
+          this.snake1 = new Snake(140, 0, this.canvasService.tiles[23], this.canvasService.tiles[6], "snake-small1.png");
+          this.canvasService.snakes.push(this.snake1);
+          this.canvasService.tiles[23].setSnake(this.snake1);
+          break;
     }
   }
 
@@ -98,6 +103,11 @@ export class BoardComponent implements OnInit {
         this.canvasService.ladders.push(this.ladder2);
         this.canvasService.tiles[8].setLadder(this.ladder2);
         break;
+        case 5:
+          this.ladder1 = new Ladder(70, 90, this.canvasService.tiles[8], this.canvasService.tiles[18], "ladder.png");
+          this.canvasService.ladders.push(this.ladder1);
+          this.canvasService.tiles[8].setLadder(this.ladder1);
+          break;
     }
   }
 
