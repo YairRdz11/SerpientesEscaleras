@@ -14,6 +14,7 @@ export class CanvasService {
   snakes: Snake[] = [];
   ladders: Ladder[] = [];
   sizeBoard: number = 10;
+  endTile: number = 99;
 
   constructor() { }
 
@@ -27,6 +28,7 @@ export class CanvasService {
   setSizeBoard(size: number){
     this.sizeBoard = +size;
     this.tiles = [];
+    this.endTile = (this.sizeBoard * this.sizeBoard) - 1;
   }
 
   getRandomColor() : string{

@@ -72,7 +72,7 @@ export class BoardComponent implements OnInit {
 
         this.snake2 = new Snake(210, 0, this.canvasService.tiles[45], this.canvasService.tiles[22],"snake-small.png");
         this.canvasService.snakes.push(this.snake2);
-        this.canvasService.tiles[45].setSnake(this.snake1);
+        this.canvasService.tiles[45].setSnake(this.snake2);
         break;
     }
   }

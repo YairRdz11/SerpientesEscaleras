@@ -101,7 +101,7 @@ export class DiceComponent implements OnInit {
         if(correctAnswer == result.value){
           this.refreshBoard();
             currentPlayer.setCurrent(currentTile, this._canvasService.tiles[currentTile]);
-          if(currentPlayer.current < 99){
+          if(currentPlayer.current < this._canvasService.endTile){
 
             if(currentPlayer.currentTile.snake){
               currentPlayer.setCurrent(currentPlayer.currentTile.snake.tileFinish.index, currentPlayer.currentTile.snake.tileFinish);
