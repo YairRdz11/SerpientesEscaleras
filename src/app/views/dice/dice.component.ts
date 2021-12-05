@@ -135,7 +135,7 @@ export class DiceComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'Ops!',
-            text: 'Te haz equivocado!'
+            text: 'Te has equivocado!'
           });
         }
       });
