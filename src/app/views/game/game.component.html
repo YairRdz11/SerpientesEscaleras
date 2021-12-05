@@ -1,0 +1,16 @@
+<div class="container">
+  <button class="btn btn-dark btn-linda mt-1" (click)="goBack()"><i class="fas fa-arrow-left"> Regresar</i></button>
+  <button class="btn btn-dark btn-linda mt-1 ml-2" (click)="goHome()"><i class="fas fa-home"> Home</i></button>
+    <div class="row mt-4">
+        <div class="col-8">
+            <app-board></app-board>
+            <h1>{{steps}}</h1>
+        </div>
+        <div class="col-4">
+            <app-score *ngIf="players.length > 0" [players]="players"></app-score>
+            <app-dice (diceEmitter)="getSteps($event)"></app-dice>
+        </div>
+    </div>
+</div>
+
+

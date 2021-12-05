@@ -1,12 +1,22 @@
-<div class="card">
+<div class="container">
+  <div class="card"> <!--align-items-center-->
     <div class="card-body">
-        <div class="card-title">
-            <h1>
-                Bienvenidos a Serpientes y escaleras
-            </h1>
-        </div>
-        <div class="card-text">Hola mundo</div>
-
-        linda es mi amors y ademas es muy bella
+      <h2 class="card-title text-center">Serpientes y Escaleras</h2>
+      <div class="row d-flex justify-content-center">
+        <img src="../../../assets/images/S-E.png" alt="" />
+      </div>
+      <div class="row d-flex justify-content-center mt-4">
+          <button
+          type="button"
+          class="btn btn-dark"
+          style="
+            font-size: 30px;
+            text-shadow: black 5px 3px 3px;
+            background-color: #008080;"
+          (click)="goCustomUser()">
+          Iniciar
+        </button>
+      </div>
     </div>
+  </div>
 </div>

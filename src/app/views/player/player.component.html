@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-4 d-flex justify-content-center">
+        <img src="../../../assets/images/user.png" alt="player">
+    </div>
+    <div class="col-3 d-flex align-items-center">
+        <p *ngIf="player">
+            {{player.name}}
+        </p>
+    </div>
+    <div *ngIf="player.turn" class="col-1 d-flex align-items-center">tu turno</div>
+</div>
