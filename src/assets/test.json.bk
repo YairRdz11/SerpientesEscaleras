@@ -1,44 +1,235 @@
 [
   {
-    "question": "Pregunta 1",
+    "question": "¿Cuál es el país más grande del mundo?",
     "answerList": [
       {
-        "answer": "Respuesta 1",
+        "answer": "China",
         "isCorrect": false
       },
       {
-        "answer": "Respuesta 2",
+        "answer": "India",
         "isCorrect": false
       },
       {
-        "answer": "Respuesta 3",
+        "answer": "Rusia",
         "isCorrect": true
       },
       {
-        "answer": "Respuesta 4",
+        "answer": "Australia",
         "isCorrect": false
       }
     ]
   },
   {
-    "question": "Pregunta 2",
+    "question": "¿Cuál es el nombre del río más largo del mundo?",
     "answerList": [
       {
-        "answer": "Respuesta 1",
+        "answer": "Río Amazonas",
         "isCorrect": true
       },
       {
-        "answer": "Respuesta 2",
+        "answer": "Río Nilo",
         "isCorrect": false
       },
       {
-        "answer": "Respuesta 3",
+        "answer": "Río Danubio",
         "isCorrect": false
       },
       {
-        "answer": "Respuesta 4",
+        "answer": "Río el Charco",
         "isCorrect": false
       }
     ]
   }
+  {
+    "question": "¿Cuál es el país que tiene forma de bota?",
+    "answerList": [
+      {
+        "answer": "España",
+        "isCorrect": false
+      },
+      {
+        "answer": "Italia",
+        "isCorrect": true
+      },
+      {
+        "answer": "Honduras",
+        "isCorrect": false
+      },
+      {
+        "answer": "Londres",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "¿Cuándo terminó la II Guerra Mundial?",
+    "answerList": [
+      {
+        "answer": "1947",
+        "isCorrect": false
+      },
+      {
+        "answer": "1942",
+        "isCorrect": false
+      },
+      {
+        "answer": "1940",
+        "isCorrect": false
+      },
+      {
+        "answer": "1945",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "question": "¿En qué año llegó Cristobal Colón a América?",
+    "answerList": [
+      {
+        "answer": "1429",
+        "isCorrect": false
+      },
+      {
+        "answer": "1592",
+        "isCorrect": false
+      },
+      {
+        "answer": "1529",
+        "isCorrect": true
+      },
+      {
+        "answer": "1492",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "¿Quién pintó el famoso cuadro La última cena?",
+    "answerList": [
+      {
+        "answer": "Leonardo da Vinci",
+        "isCorrect": true
+      {
+        "answer": "Rembrandt",
+        "isCorrect": false
+      },
+      {
+        "answer": "Velazquez",
+        "isCorrect": false
+      },
+      {
+        "answer": "Pedrito Sola",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "¿A qué se denomina séptimo arte?",
+    "answerList": [
+      {
+        "answer": "Musica",
+        "isCorrect": false
+      },
+      {
+        "answer": "Arte",
+        "isCorrect": false
+      },
+      {
+        "answer": "Cine",
+        "isCorrect": true
+      },
+      {
+        "answer": "Pintura",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "¿Cómo se denomina al resultado de una multiplicación?",
+    "answerList": [
+      {
+        "answer": "Funsión",
+        "isCorrect": false
+      },
+      {
+        "answer": "Múltiplo",
+        "isCorrect": false
+      },
+      {
+        "answer": "resultado",
+        "isCorrect": false
+      },
+      {
+        "answer": "Producto",
+        "isCorrect": true
+      }
+    ]
+  },
+
+  {
+
+    "question": "¿Cómo se denomina al resultado de una multiplicación?",
+    "answerList": [
+      {
+        "answer": "3.1614",
+        "isCorrect": false
+      },
+      {
+        "answer": "3.1416",
+        "isCorrect": true
+      },
+      {
+        "answer": "3.416",
+        "isCorrect": false
+      },
+      {
+        "answer": "Producto",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": " ¿Cuántas patas tiene una araña?",
+    "answerList": [
+      {
+        "answer": "8",
+        "isCorrect": true
+      },
+      {
+        "answer": "6",
+        "isCorrect": false
+      },
+      {
+        "answer": "10",
+        "isCorrect": false
+      },
+      {
+        "answer": "4",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": " ¿Cuántos huesos tiene en total un ser humano?",
+    "answerList": [
+      {
+        "answer": "60",
+        "isCorrect": false
+      },
+      {
+        "answer": "206",
+        "isCorrect": true
+      },
+      {
+        "answer": "200",
+        "isCorrect": false
+      },
+      {
+        "answer": "416",
+        "isCorrect": false
+      }
+    ]
+  }
+
 ]
